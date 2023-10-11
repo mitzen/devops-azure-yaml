@@ -4,6 +4,7 @@ parameters:
     type: string
     default: dev
 
+
 variables:
   # this is build time 
   - name: mytargetvalue
@@ -16,6 +17,9 @@ variables:
     ${{ else }}:
       value: 'other-environment'
 
+pool:
+  name: Default
+  
 steps:
 - script: | 
     echo '$(mytargetvalue)'
