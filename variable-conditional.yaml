@@ -8,11 +8,11 @@ variables:
   # this is runtime
   isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
   # this is build time 
-  ${{if eq(parameters.environment, "dev"}}:
+  ${{if eq(parameters.environment, "dev")}}:
       mytargetvalue: 'dev-environment'
-  ${{elseif eq(parameters.environment, "uat"}}:
+  ${{elseif eq(parameters.environment, "uat")}}:
       mytargetvalue: 'uat-environment'
-  ${{elseif eq(parameters.environment, "prod"}}:
+  ${{elseif eq(parameters.environment, "prod")}}:
       mytargetvalue: 'prod-environment'
   ${{else}}:
       mytargetvalue: 'other-environment'
