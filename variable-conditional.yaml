@@ -5,14 +5,13 @@ parameters:
     default: dev
 
 variables:
-
   # this is build time 
   - name: mytargetvalue
-    ${{ if eq(parameters.environment, "dev")}}:
+    ${{ if eq(parameters.environment, 'dev') }}:
       value: 'dev-environment'
-    ${{ elseif eq(parameters.environment, "uat") }}:
+    ${{ elseif eq(parameters.environment, 'uat') }}:
       value: 'uat-environment'
-    ${{ elseif eq(parameters.environment, "prod") }}:
+    ${{ elseif eq(parameters.environment, 'prod') }}:
       value: 'prod-environment'
     ${{ else }}:
       value: 'other-environment'
