@@ -5,17 +5,17 @@ parameters:
     default: dev
 
 variables:
-  # this is runtime
-  isMain: $[eq(variables['Build.SourceBranch'], 'refs/heads/main')]
+
   # this is build time 
-  ${{ if eq(parameters.environment, "dev")}}:
-      mytargetvalue: 'dev-environment'
-  ${{ elseif eq(parameters.environment, "uat") }}:
-      mytargetvalue: 'uat-environment'
-  ${{ elseif eq(parameters.environment, "prod") }}:
-      mytargetvalue: 'prod-environment'
-  ${{ else }}:
-      mytargetvalue: 'other-environment'
+  - name: mytargetvalue
+    ${{ if eq(parameters.environment, "dev")}}:
+      value: 'dev-environment'
+    ${{ elseif eq(parameters.environment, "uat") }}:
+      value: 'uat-environment'
+    ${{ elseif eq(parameters.environment, "prod") }}:
+      value: 'prod-environment'
+    ${{ else }}:
+      value: 'other-environment'
 
 steps:
 - script: | 
