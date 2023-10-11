@@ -14,7 +14,7 @@ variables:
       mytargetvalue: 'uat-environment'
   ${{ elseif eq(parameters.environment, "prod") }}:
       mytargetvalue: 'prod-environment'
-  ${ {else }}:
+  ${{ else }}:
       mytargetvalue: 'other-environment'
 
 steps:
