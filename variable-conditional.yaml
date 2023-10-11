@@ -18,8 +18,8 @@ variables:
       value: 'other-environment'
 
 pool:
-  name: Default
-  
+  name: Azure Pipelines
+
 steps:
 - script: | 
     echo '$(mytargetvalue)'
